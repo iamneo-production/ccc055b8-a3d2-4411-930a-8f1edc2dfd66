@@ -18,13 +18,13 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-      <img className='nav-logo' src='/home/coder/project/workspace/reactapp/src/components/navbar/admissionportallogo.jpg' alt="" style={divStyle} />
+      <img className='nav-logo' src={require('../navbar/admissionlogo.jpg')} alt="" style={divStyle} />
         <Bars />
         <NavMenu>
           <NavLink to='/' activeStyle>
             Home
           </NavLink>
-          <NavLink to='/signup' activeStyle>
+          <NavLink to='/user/signup' activeStyle>
             Sign Up
           </NavLink>
           <NavLink to='/login' activeStyle>

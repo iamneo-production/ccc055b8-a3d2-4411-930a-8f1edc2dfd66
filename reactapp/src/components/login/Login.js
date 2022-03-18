@@ -17,11 +17,11 @@ const Signup = () => {
                 <input type="email" name="email" id="email" placeholder="Enter email"></input><br />
                 <input type="password" name="password" id="password" placeholder="Password"></input><br />
                 <div className="form-btn">
-                    <Button BtnName={"Login"} />
+                    <Button BtnName={"Login"}  />
                 </div>
             </form>
             <footer className='footer'>
-                <p>Not a user? <Link to='/signup' className='link'>Sign up</Link></p>
+                <p>Not a user? <Link to='/user/signup' className='link'>Sign up</Link></p>
             </footer>
             </div>  
         </div>
