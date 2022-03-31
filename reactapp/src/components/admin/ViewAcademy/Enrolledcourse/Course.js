@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 //import Card from '@material-ui/core/Card'
 // import { FaAngellist, FaGenderless, FaHandScissors } from 'react-icons/fa'
 // import {Link} from 'react-router-dom'
-import Button from '../../web components/buttons/Button.jsx'
+import Button from '../../../web components/buttons/Button';
 import './course.css';
 
 const Course=()=>{
