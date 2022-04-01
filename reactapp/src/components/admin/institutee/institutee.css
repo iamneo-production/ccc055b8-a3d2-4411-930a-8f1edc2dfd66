@@ -72,3 +72,12 @@ a:hover{
     margin-left: 10px;
     height:43px;
 }
+.button2{
+    display: flex;
+    align-items: center;
+    padding-left: 75%;
+}
+.link{
+    padding-top: 5px;
+    padding-left:0px;
+}

@@ -10,7 +10,13 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import InstitutePagee from './components/user/institutee/institutee';
-import Enrolledcourse from './components/user/enrolledcourse/enrolledCourse'; 
+import InstitutePage from '../src/components/admin/institutee/institutee';
+import Enrolledcourse from '../src/components/admin/ViewAcademy/Enrolledcourse/course';
+import Institute from "./components/admin/ViewAcademy/institutes/institute";
+import Course from "./components/admin/ViewAcademy/Enrolledcourse/course";
+import AddInstitute from "./components/admin/ViewAcademy/institutes/AddInstitute";
+import EditInstitute from "./components/admin/ViewAcademy/institutes/EditInstitute"; 
+import { Switch } from '@mui/material';
 
 function App() {
   const success = () => toast.success('Login Successful!!')
@@ -21,6 +27,7 @@ function App() {
        <div>
        <Navbar />
          <div className="App">
+           {/* <Switch> */}
            <Routes>
              <Route path='/' element={<Home/>} />
              <Route path='/admin/signup' element={<AdminSignup/>} success={success} fail={fail} />
@@ -28,7 +35,13 @@ function App() {
              <Route path='/login' element={<Login/>} success={success} fail={fail} />
              <Route path='/user/institutepage' element={<InstitutePagee/>}  />
              <Route path='/user/enrolledcourse' element={<Enrolledcourse/>}  />
+             <Route path="/institutes" element={<Institute />} />
+            <Route path="/EnrollCourse" element={<Course />} />
+            <Route path="/addInstitute" element={<AddInstitute />} />
+            <Route path="/editInstitute" element={<EditInstitute />} />
+            <Route path="/institutepage" element={<InstitutePage/>} />
            </Routes>
+           {/* </Switch> */}
          </div>
        </div>
      </Router>

@@ -1,10 +1,13 @@
 import React , {useState} from 'react';
+import { Link , useHistory} from 'react-router-dom';
+import { FaEdit , FaTrash } from 'react-icons/fa';
 import '../institutee/institutee.css';
 import Rating from '@mui/material/Rating';
 import Button from "../../web components/buttons/Button";
 import data from './data';
+import EditInstitute from '../ViewAcademy/institutes/EditInstitute';
 import Navbar from '../../navbar/Navbar'
-const InstitutePagee=()=>{
+const InstitutePage=()=>{
     const[filter,setfilter]=useState("");
     const searchfilter=(event)=>{
         setfilter(event.target.value);
@@ -17,7 +20,7 @@ const InstitutePagee=()=>{
     return(
         <div>
         <div className='Navbar'>
-            hello
+            hell
         </div>
         <div className='instpage'>
         <div className='search'>
@@ -33,18 +36,24 @@ const InstitutePagee=()=>{
                     <center><a href='#0'>{item.name}</a></center>
                     <div className='rating'>
                         <p>Place:{item.place}</p>
-                        <Rating name="size-small" defaultValue={2} size="small" />
+                        <Link to='/editInstitute' className='link'><FaEdit/></Link>
+                        <Link to='#' className='link'><FaTrash/></Link>
+                        <Rating name="size-small" defaultValue={item.rating} size="small" />
                     </div>
                     
                 </div>
-                
                 </div>
                 )
             })}
             
         </section>
+        <div className='button2'>
+            <Link to="/addInstitute">
+            <Button className="link" BtnName={"Add"} id="f-addinst" />
+            </Link>
+        </div>
         </div>
         </div>
     )
 }
-export default InstitutePagee;
+export default InstitutePage;
