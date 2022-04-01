@@ -1,33 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../web components/buttons/Button';
 import './login.css';
 
-async function loginUser(credentials) {
-    return fetch('http://localhost:8080/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
-   }
-
-
-const Login = ({ setToken }) => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-
-    const handleSubmit = async e => {
-        e.preventDefault();
-        const token = await loginUser({
-          email,
-          password
-        });
-        setToken(token);
-      }
-
+const Signup = () => {
+    const login=()=>{
+        alert();
+    }
   return (
     <div className="main-container">
         <div className='signup-container'>
@@ -36,11 +15,14 @@ const Login = ({ setToken }) => {
             </div>
             <div className="form-span"></div>
             <div className="form-input-container">
-            <form onSubmit={handleSubmit}>
-                <input type="email" name="email" id="email" placeholder="Enter email" onChange={e => setEmail(e.target.value)}></input><br />
-                <input type="password" name="password" id="password" placeholder="Password" onChange={e => setPassword(e.target.value)}></input><br />
+            <form>
+                <input type="email" name="email" id="email" placeholder="Enter email"></input><br />
+                <input type="password" name="password" id="password" placeholder="Password"></input><br />
+                {/* <div className="form-btn">
+                    <Button BtnName={"Login"}  onChange={login}/>
+                </div> */}
                 <div className="form-btn">
-                    <Button BtnName={"Login"}  />
+                <button className='button' onClick={login}><span>{'login'} </span></button>
                 </div>
             </form>
             <footer className='footer'>
@@ -52,6 +34,4 @@ const Login = ({ setToken }) => {
   );
 };
 
-
-export default Login;
-
+export default Signup;

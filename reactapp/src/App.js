@@ -10,28 +10,24 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import InstitutePagee from './components/user/institutee/institutee';
-import Enrolledcourse from './components/user/enrolledcourse/enrolledCourse'; 
-//import useToken from './components/web components/token/useToken';
-import Course from './components/admin/ViewAcademy/Enrolledcourse/Course';
-import Institute from './components/admin/ViewAcademy/institutes/institute';
+import InstitutePage from '../src/components/admin/institutee/institutee';
+import Enrolledcourse from '../src/components/admin/ViewAcademy/Enrolledcourse/course';
+import Institute from "./components/admin/ViewAcademy/institutes/institute";
+import Course from "./components/admin/ViewAcademy/Enrolledcourse/course";
+import AddInstitute from "./components/admin/ViewAcademy/institutes/AddInstitute";
+import EditInstitute from "./components/admin/ViewAcademy/institutes/EditInstitute"; 
+import { Switch } from '@mui/material';
 
 function App() {
   const success = () => toast.success('Login Successful!!')
   const fail = (err) => toast.error(err)
-
-/*
-  const { token, setToken } = useToken();
-
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
-*/
   return (
      <>
      <Router>
        <div>
        <Navbar />
          <div className="App">
+           {/* <Switch> */}
            <Routes>
              <Route path='/' element={<Home/>} />
              <Route path='/admin/signup' element={<AdminSignup/>} success={success} fail={fail} />
@@ -39,9 +35,13 @@ function App() {
              <Route path='/login' element={<Login/>} success={success} fail={fail} />
              <Route path='/user/institutepage' element={<InstitutePagee/>}  />
              <Route path='/user/enrolledcourse' element={<Enrolledcourse/>}  />
-             <Route path='/admin/enrolledcourse' element={<Course />}  />
-             <Route path='/admin/institue' element={<Institute />}  />
+             <Route path="/institutes" element={<Institute />} />
+            <Route path="/EnrollCourse" element={<Course />} />
+            <Route path="/addInstitute" element={<AddInstitute />} />
+            <Route path="/editInstitute" element={<EditInstitute />} />
+            <Route path="/institutepage" element={<InstitutePage/>} />
            </Routes>
+           {/* </Switch> */}
          </div>
        </div>
      </Router>
@@ -51,4 +51,3 @@ function App() {
 }
 
 export default App;
-
