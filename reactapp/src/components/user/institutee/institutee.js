@@ -3,6 +3,7 @@ import '../institutee/institutee.css';
 import Rating from '@mui/material/Rating';
 import Button from "../../web components/buttons/Button";
 import data from './data';
+import Navbar from '../../navbar/Navbar'
 const InstitutePagee=()=>{
     const[filter,setfilter]=useState("");
     const searchfilter=(event)=>{
@@ -14,6 +15,10 @@ const InstitutePagee=()=>{
     })
     // console.log(dataSearch);
     return(
+        <div>
+        <div className='Navbar'>
+            hello
+        </div>
         <div className='instpage'>
         <div className='search'>
                 <input className='searchtext' type="text" placeholder='Search Here' value={filter} onChange={searchfilter}></input>
@@ -38,6 +43,7 @@ const InstitutePagee=()=>{
             })}
             
         </section>
+        </div>
         </div>
     )
 }

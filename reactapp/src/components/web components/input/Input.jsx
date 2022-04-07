@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Input.css";
 
@@ -14,3 +15,4 @@ const Input = ({ inputType, inputName, inputId, inputPlaceholder }) => {
 };
 
 export default Input;
+
