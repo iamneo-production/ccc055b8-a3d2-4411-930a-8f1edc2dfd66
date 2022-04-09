@@ -2,37 +2,37 @@
 import React from 'react';
 import {
   Nav,
-  NavLink,
-  Bars,
-  NavMenu,
+  NavLink1,
+  Bars1,
+  NavMenu1,
 } from './NavbarElements';
 
   
 const Navbar = () => {
-    const divStyle = {
-        width: '8%',
-        height:'50px',
+    const divStyle1 = {
+        width: '10%',
+        height:'53px',
         float: 'left',
       };
       
   return (
     <>
       <Nav>
-      <img className='nav-logo' src={require('../navbar/admissionlogo.jpg')} alt="" style={divStyle} />
-        <Bars />
-        <NavMenu>
-          <NavLink to='/' activeStyle>
+      <img className='nav-logo' src={require('../navbar/admissionlogo.jpg')} alt="" style={divStyle1} />
+        <Bars1 />
+        <NavMenu1>
+          <NavLink1 to='/' activeStyle>
             Home
-          </NavLink>
-          <NavLink to='/user/signup' activeStyle>
+          </NavLink1>
+          <NavLink1 to='/user/signup' activeStyle>
             Sign Up
-          </NavLink>
-          <NavLink to='/login' activeStyle>
+          </NavLink1>
+          <NavLink1 to='/login' activeStyle>
             Log In
-          </NavLink>
+          </NavLink1>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-        </NavMenu>
+        </NavMenu17>
       </Nav>
     </>
   );
