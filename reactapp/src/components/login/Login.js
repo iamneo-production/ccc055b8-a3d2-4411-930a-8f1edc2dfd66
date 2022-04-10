@@ -16,7 +16,6 @@ async function loginUser(credentials) {
    }
 //post locslhost by type json
 //useState to const email and password and vadilate by setting token
-//navigate and check input values by handleSubmit
 const Login = ({ setToken }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
