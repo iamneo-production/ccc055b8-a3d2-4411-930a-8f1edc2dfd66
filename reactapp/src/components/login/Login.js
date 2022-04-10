@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../web components/buttons/Button';
 import './login.css';
 //get useState,link from react and import logincss
+//if given values are not by user or for creating new user click signup
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
       method: 'POST',
@@ -44,7 +45,7 @@ const Login = ({ setToken }) => {
                     <Button BtnName={"Login"}  />
                 </div>
             </form>
-            //if given values are not by user or for creating new user click signup
+          
             <footer className='footer'>
                 <p>Not a user? <Link to='/user/signup' className='link'>Sign up</Link></p>
             </footer>
