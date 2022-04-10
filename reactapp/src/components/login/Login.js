@@ -44,9 +44,9 @@ const Login = ({ setToken }) => {
                     <Button BtnName={"Login"}  />
                 </div>
             </form>
+            //if given values are not by user or for creating new user click signup
             <footer className='footer'>
                 <p>Not a user? <Link to='/user/signup' className='link'>Sign up</Link></p>
-                    //if given values are not by user or for creating new user click signup
             </footer>
             </div>  
         </div>
