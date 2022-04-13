@@ -2,9 +2,11 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from '../../web components/buttons/Button';
+import UserService from '../../admin/services/UserService';
 import './signup.css';
 
 const Signup = () => {
+    const history=useNavigate();
     const[validation,setValidation]=useState("")
     // const[userstate,setusersate]=usestate("");
     const[valuee,setValue]=useState({
@@ -48,6 +50,9 @@ const Signup = () => {
         } 
     users.push(state);
     console.log(state);
+    UserService.adduser(state).then(res=>{
+        history('/user/login');
+    })
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
@@ -57,7 +62,7 @@ const Signup = () => {
         navigate('/admin/signup',{ replace:true });
     }
     else if(valuee.select==='User'){
-        navigate('/',{ replace:true });
+        navigate('/user/signup',{ replace:true });
     }
   }
 
@@ -88,7 +93,7 @@ const Signup = () => {
             </form>
             {/* <Button BtnName={"Submit"} state={state} /> */}
             <footer className='footer'>
-                <p>Already a user? <Link to='/login' className='link'>Login</Link></p>
+                <p>Already a user? <Link to='/user/login' className='link'>Login</Link></p>
             </footer>
             </div>  
         </div>

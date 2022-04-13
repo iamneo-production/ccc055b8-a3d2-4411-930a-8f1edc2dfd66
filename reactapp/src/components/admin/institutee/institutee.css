@@ -81,3 +81,20 @@ a:hover{
     padding-top: 5px;
     padding-left:0px;
 }
+.instnav{
+    background-color: #25274d;
+    padding:5px;
+    margin: 5px;
+    border-radius: 5px;
+    color:white;
+    font-size:large;
+    border:3px solid #3cf;
+}
+.instnav:hover{
+    background-color: #2e2f52;
+    font-size: larger;
+    transition: .25s;
+    color:#3cf;
+    padding:7px;
+    
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link , useHistory} from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import Button from '../../../web components/buttons/Button';
 import './institute.css'
 import Input from "../../../web components/input/Input";
@@ -12,9 +12,9 @@ const Institute = () => {
   return (
     <>
       <div className="search-field">
-        <input
+        <Input
           className="s-field"
-          placeholder="Search Your Institutes"
+          inputPlaceholder={"Search Your Institutes"}
         />
         <Button className="button" BtnName={"Search"} value="Search" />
         <Link to="/addInstitute">
