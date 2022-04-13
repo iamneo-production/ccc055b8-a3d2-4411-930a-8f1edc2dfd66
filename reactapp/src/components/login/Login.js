@@ -1,59 +1,82 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../web components/buttons/Button';
-import './login.css';
-//get useState,link from react and import logincss
-//if given values are not by user or for creating new user click signup
-async function loginUser(credentials) {
-    return fetch('http://localhost:8080/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
+import { useNavigate } from "react-router-dom";
+// import Button from '../../web components/buttons/Button.jsx'
+
+import AuthService from '../admin/services/AuthService';
+
+const Login = () => {
+    const history=useNavigate();
+    // const[validation,setValidation]=useState("")
+    // const[userstate,setusersate]=usestate("");
+    const[valuee,setValue]=useState({
+        email:"",
+        password:""
     })
-      .then(data => data.json())
-   }
-//post locslhost by type json
-//useState to const email and password and vadilate by setting token
-const Login = ({ setToken }) => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const assignValues=(event)=>{
+        const name=event.target.name
+        const value=event.target.value
+        setValue({
+            ...valuee,
+            [name]:value
+        })
+    }
 
-    const handleSubmit = async e => {
-        e.preventDefault();
-        const token = await loginUser({
-          email,
-          password
-        });
-        setToken(token);
-      }
+    let users=[];
+    const submitting = (event)=>{
+    let state={
+            email:valuee.email,
+            password:valuee.password
+        } 
+    users.push(state);
+    console.log(state);
+    AuthService.adminlogin(state).then(res=>{
+        console.log(res.status);
+        if(res.status===500)
+            alert('login failed');
+        else{
+            history('/institutepage');
+        }
+    })
 
+    localStorage.setItem('usersdata',JSON.stringify(users));
+    event.preventDefault();
+  }
+
+//   let navigate = useNavigate();
+//   const handleChange = (event) =>{
+//     if(valuee.select==='Admin'){
+//         navigate('/admin/signup',{ replace:true });
+//     }
+//     else if(valuee.select==='User'){
+//         navigate('/',{ replace:true });
+//     }
+//   }
+    
   return (
     <div className="main-container">
         <div className='signup-container'>
             <div className="form-header">
-                <h1>Sign in</h1>
+                <h1>Login</h1>
             </div>
             <div className="form-span"></div>
             <div className="form-input-container">
-            <form onSubmit={handleSubmit}>
-                <input type="email" name="email" id="email" placeholder="Enter email" onChange={e => setEmail(e.target.value)}></input><br />
-                <input type="password" name="password" id="password" placeholder="Password" onChange={e => setPassword(e.target.value)}></input><br />
+            <form onSubmit={submitting}>
+                <input type="email" name="email" id="email" placeholder="Enter email" value={valuee.email} onChange={assignValues}></input><br />
+                {/* <input type="text" id="username" name="username" placeholder="Enter username" value={valuee.username} onChange={assignValues}></input><br /> */}
+                <input type="password" name="password" id="password" placeholder="Password" value={valuee.password} onChange={assignValues}></input><br />
                 <div className="form-btn">
-                    <Button BtnName={"Login"}  />
+                    {/* <Button className="button" BtnName={"Submit"} value="submit" /> */}
+                    <button className='button' ><span>{'Login'} </span></button>
                 </div>
             </form>
-          
-            <footer className='footer'>
-                <p>Not a user? <Link to='/user/signup' className='link'>Sign up</Link></p>
-            </footer>
+            {/* <Button BtnName={"Submit"} state={state} /> */}
             </div>  
         </div>
     </div> 
   );
 };
 
-
 export default Login;
+
 
