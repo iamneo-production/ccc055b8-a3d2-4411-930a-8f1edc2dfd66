@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   /* justify-content: flex-start; */
 `;
   
-export const NavLink1 = styled(Link)`
+export const NavLink = styled(Link)`
   color: white;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ export const NavLink1 = styled(Link)`
   }
 `;
   
-export const Bars1 = styled(FaBars)`
+export const Bars = styled(FaBars)`
   display: none;
   color: #808080;
   @media screen and (max-width: 768px) {
@@ -41,7 +41,7 @@ export const Bars1 = styled(FaBars)`
   }
 `;
   
-export const NavMenu1 = styled.div`
+export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -24px;

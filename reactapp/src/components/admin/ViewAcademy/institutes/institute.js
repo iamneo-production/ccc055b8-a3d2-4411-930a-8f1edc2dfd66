@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
 import Button from '../../../web components/buttons/Button';
 import './institute.css'
+import Input from "../../../web components/input/Input";
+
 //import {Card,CardGroup} from '@material-ui/core/Card'
 //import AddInstitute from './AddInstitute';
 
@@ -9,17 +11,19 @@ import './institute.css'
 const Institute = () => {
   return (
     <>
-      <div className='search-field'>
-        <input className='s-field' placeholder="Search Your Institutes"/>
-        <div className='search-btn'>
+      <div className="search-field">
+        <input
+          className="s-field"
+          placeholder="Search Your Institutes"
+        />
         <Button className="button" BtnName={"Search"} value="Search" />
-        </div>
+        <Link to="/addInstitute">
+          <Button className="link" BtnName={"Add"} id="f-addinst" />
+        </Link>
+        <Link to="/editInstitute">
+          <Button className="link" BtnName={"Update"} id="f-editinst" />
+        </Link>
       </div>
-        <footer className='footer'>
-          <Link to='/addInstitute' className='link' id="f-addinst">+ Add Institute</Link><br/>
-          <Link to='/editInstitute' className='link' id='f-editinst'>Update Institute</Link>
-        </footer>
-     
     </>
   );
 };

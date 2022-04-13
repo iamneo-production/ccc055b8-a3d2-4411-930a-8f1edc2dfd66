@@ -10,6 +10,7 @@
     height: 0.25px;
     box-shadow:0px 0px 5px 0px #102325;
 }
+
 .form-span{
     padding-top: 10px;
 }
@@ -27,6 +28,7 @@
     opacity: 0.9;
     box-shadow:0px 0px 10px 0px #102325;
 }
+
 .select{
     font-size:20px;
     float:left;
@@ -38,6 +40,7 @@
     border:1px solid #feffff;
     border-radius:4px;
   }
+
 .placeHolder{
     color: #feffff;
     font-family: Montserrat,serif;
@@ -78,10 +81,67 @@ input{
 .link{
     color: #3cf;
 }
+
 .form-btn{
     padding-left: 90px;
 }
+
 .link:hover{
     color: #11b63a;
     font-size:120%;
 }
+.submit-btn{
+    background-color: #25274d;
+    color: #3cf;
+    align-items: center;
+    cursor: pointer;
+    width:150px;
+    justify-items: center;
+    border-radius: 10px;
+    border-color: #3cf;
+}
+.button{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat,serif;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3cf;
+    background-color: #25274d;
+    border: 3px solid #3cf;
+    width: 100px;
+    height: 40px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover{
+      background-color: #1e1f3d;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

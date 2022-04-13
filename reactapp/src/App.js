@@ -10,22 +10,25 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import InstitutePagee from './components/user/institutee/institutee';
-import Enrolledcourse from './components/user/enrolledcourse/enrolledCourse'; 
-//import useToken from './components/web components/token/useToken';
-import Course from './components/admin/ViewAcademy/Enrolledcourse/Course';
-import Institute from './components/admin/ViewAcademy/institutes/institute';
+import InstitutePage from '../src/components/admin/institutee/institutee';
+import Enrolledcourse from '../src/components/user/enrolledcourse/enrolledCourse';
+import Institute from "./components/admin/ViewAcademy/institutes/institute";
+import Course from "./components/admin/ViewAcademy/Enrolledcourse/course";
+import AddInstitute from "./components/admin/ViewAcademy/institutes/AddInstitute";
+import EditInstitute from "./components/admin/ViewAcademy/institutes/EditInstitute"; 
+import Availablecourse from "../src/components/user/availablecourse/availablecourse";
+import Availablecourses from "./components/admin/availablecourse/availablecourse";
+import AddCourse from './components/admin/availablecourse/institutes/AddCourse';
+import EditCourse from './components/admin/availablecourse/institutes/EditCourse';
+import EnrollCourse from './components/user/Enrollcourse/course';
+import UserLogin from './components/user/userlogin/login';
+import Student from './components/admin/Students/Student';
+
+import { Switch } from '@mui/material';
 
 function App() {
   const success = () => toast.success('Login Successful!!')
   const fail = (err) => toast.error(err)
-
-/*
-  const { token, setToken } = useToken();
-
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
-*/
   return (
      <>
      <Router>
@@ -39,8 +42,18 @@ function App() {
              <Route path='/login' element={<Login/>} success={success} fail={fail} />
              <Route path='/user/institutepage' element={<InstitutePagee/>}  />
              <Route path='/user/enrolledcourse' element={<Enrolledcourse/>}  />
-             <Route path='/admin/enrolledcourse' element={<Course />}  />
-             <Route path='/admin/institue' element={<Institute />}  />
+             <Route path='/user/availablecourse' element={<Availablecourse/>}  />
+             <Route path='/user/enrollcourse' element={<EnrollCourse/>}/>
+             <Route path='user/login' element={<UserLogin/>} success={success} fail={fail} />
+             {/* <Route path="/institutes" element={<Institute />} /> */}
+            <Route path="/enrollCourse" element={<Course />} />
+            <Route path="/addinstitute" element={<AddInstitute />} />
+            <Route path="/editinstitute/:courseId" element={<EditInstitute />} />
+            <Route path="/institutepage" element={<InstitutePage/>} />
+            <Route path="/availablecourse" element={<Availablecourses/>} />
+            <Route path="/addcourse" element={<AddCourse/>}/>
+            <Route path="/editcourse/:courseId" element={<EditCourse/>}/>
+            <Route path="/student" element={<Student/>}/>
            </Routes>
          </div>
        </div>
@@ -51,4 +64,3 @@ function App() {
 }
 
 export default App;
-

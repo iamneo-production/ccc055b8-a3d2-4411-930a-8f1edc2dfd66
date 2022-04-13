@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from '../../web components/buttons/Button.jsx'
 import './signup.css';
+import AuthService from '../services/AuthService';
 
 const Signup = () => {
+    const history=useNavigate();
     const[validation,setValidation]=useState("")
     // const[userstate,setusersate]=usestate("");
     const[valuee,setValue]=useState({
@@ -48,6 +50,9 @@ const Signup = () => {
         } 
     users.push(state);
     console.log(state);
+    AuthService.addadmin(state).then(res=>{
+        history('/login');
+    })
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
@@ -83,7 +88,8 @@ const Signup = () => {
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" value={valuee.confirmPassword} onChange={confPassword}></input><br />
                 {valuee.password!==valuee.confirmPassword && <span className='pwd-validation'>{validation}</span>}
                 <div className="form-btn">
-                    <Button className="button" BtnName={"Submit"} value="submit" />
+                    {/* <Button className="button" BtnName={"Submit"} value="submit" /> */}
+                    <button className='button' onClick={()=>{alert()}}><span>{'SignUp'} </span></button>
                 </div>
             </form>
             {/* <Button BtnName={"Submit"} state={state} /> */}

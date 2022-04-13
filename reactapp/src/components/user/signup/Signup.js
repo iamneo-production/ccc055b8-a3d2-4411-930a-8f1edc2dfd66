@@ -2,9 +2,11 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from '../../web components/buttons/Button';
+import UserService from '../../admin/services/UserService';
 import './signup.css';
 
 const Signup = () => {
+    const history=useNavigate();
     const[validation,setValidation]=useState("")
     // const[userstate,setusersate]=usestate("");
     const[valuee,setValue]=useState({
@@ -48,6 +50,9 @@ const Signup = () => {
         } 
     users.push(state);
     console.log(state);
+    UserService.adduser(state).then(res=>{
+        history('/user/login');
+    })
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
@@ -82,12 +87,13 @@ const Signup = () => {
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" value={valuee.confirmPassword} onChange={confPassword}></input><br />
                 {valuee.password!==valuee.confirmPassword && <span className='pwd-validation'>{validation}</span>}
                 <div className="form-btn">
-                    <Button className="button" BtnName={"Submit"} value="submit" />
+                {/* <Button className="button" BtnName={"Submit"} value="submit" /> */}
+                <button className='button' onClick={()=>{alert()}}><span>{'SignUp'} </span></button>
                 </div>
             </form>
             {/* <Button BtnName={"Submit"} state={state} /> */}
             <footer className='footer'>
-                <p>Already a user? <Link to='/login' className='link'>Login</Link></p>
+                <p>Already a user? <Link to='/user/login' className='link'>Login</Link></p>
             </footer>
             </div>  
         </div>
