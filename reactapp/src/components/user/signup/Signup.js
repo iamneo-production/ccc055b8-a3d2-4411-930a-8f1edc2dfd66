@@ -2,9 +2,17 @@ import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from '../../web components/buttons/Button';
+<<<<<<< HEAD
 import './signup.css';
 
 const Signup = () => {
+=======
+import UserService from '../../admin/services/UserService';
+import './signup.css';
+
+const Signup = () => {
+    const history=useNavigate();
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     const[validation,setValidation]=useState("")
     // const[userstate,setusersate]=usestate("");
     const[valuee,setValue]=useState({
@@ -48,6 +56,12 @@ const Signup = () => {
         } 
     users.push(state);
     console.log(state);
+<<<<<<< HEAD
+=======
+    UserService.adduser(state).then(res=>{
+        history('/user/login');
+    })
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
@@ -57,7 +71,11 @@ const Signup = () => {
         navigate('/admin/signup',{ replace:true });
     }
     else if(valuee.select==='User'){
+<<<<<<< HEAD
         navigate('/',{ replace:true });
+=======
+        navigate('/user/signup',{ replace:true });
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     }
   }
 
@@ -88,7 +106,11 @@ const Signup = () => {
             </form>
             {/* <Button BtnName={"Submit"} state={state} /> */}
             <footer className='footer'>
+<<<<<<< HEAD
                 <p>Already a user? <Link to='/login' className='link'>Login</Link></p>
+=======
+                <p>Already a user? <Link to='/user/login' className='link'>Login</Link></p>
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
             </footer>
             </div>  
         </div>

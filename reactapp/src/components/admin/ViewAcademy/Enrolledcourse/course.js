@@ -67,6 +67,7 @@ const Course = () => {
           <div className="form-input-container">
             <form onSubmit={submitting}>
               <div className="form1">
+<<<<<<< HEAD
                 <Input
                   inputType={"text"}
                   inputName={"firstName"}
@@ -231,6 +232,168 @@ const Course = () => {
                   BtnName={"Enroll"}
                   value="Enroll Now"
                 />
+=======
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  placeholder="Enter Your FirstName"
+                  value={valuee.firstName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Enter Your LastName"
+                  value={valuee.lastName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+                <input
+                  type="text"
+                  name="Gender"
+                  id="Gender"
+                  placeholder="Enter Your Gender"
+                  value={valuee.Gender}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="fatherName"
+                  id="fatherName"
+                  placeholder="Enter Your FatherName"
+                  value={valuee.fatherName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="Enter Your PhoneNumber"
+                  value={valuee.phoneNumber}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="alternateNumber"
+                  id="alternateNumber"
+                  placeholder="Enter Your Alternate Number"
+                  value={valuee.alternateNumber}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="emailId"
+                  id="emailId"
+                  placeholder="Enter Your Email-ID"
+                  value={valuee.emailId}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="motherName"
+                  id="motherName"
+                  placeholder="Enter Your MotherName"
+                  value={valuee.motherName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+              </div>
+              <div className="form2">
+                <input
+                  type="text"
+                  name="age"
+                  id="age"
+                  placeholder="Enter Your Age"
+                  value={valuee.age}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="marks"
+                  id="marks"
+                  placeholder="Enter Your SSC/HSC Marks"
+                  value={valuee.marks}
+                  onChange={assignValues}
+                ></input>
+                <br />
+                <input
+                  type="text"
+                  name="houseNo"
+                  id="houseNo"
+                  placeholder="Enter House No"
+                  value={valuee.houseNo}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="areaName"
+                  id="areaName"
+                  placeholder="Enter Area Name"
+                  value={valuee.areaName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="pincode"
+                  id="pincode"
+                  placeholder="Enter Pincode"
+                  value={valuee.pincode}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="streetName"
+                  id="streetName"
+                  placeholder="Enter Street Name"
+                  value={valuee.streetName}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="state"
+                  id="state"
+                  placeholder="Enter State"
+                  value={valuee.state}
+                  onChange={assignValues}
+                ></input>
+                <br />
+
+                <input
+                  type="text"
+                  name="nationality"
+                  id="nationality"
+                  placeholder="Enter Nationality"
+                  value={valuee.nationality}
+                  onChange={assignValues}
+                ></input>
+                <br />
+              </div>
+              <div className="form-btn1">
+              <button className='button' onClick={()=>{alert()}}><span>{'Enroll'} </span></button>
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
               </div>
             </form>
           </div>

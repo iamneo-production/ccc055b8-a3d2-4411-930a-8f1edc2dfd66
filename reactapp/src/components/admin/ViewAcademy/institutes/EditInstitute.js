@@ -43,6 +43,7 @@ const EditInstitute = () => {
         </div>
         <div className="form-input-container">
           <form onSubmit={submitting}>
+<<<<<<< HEAD
             <Input
               inputType={"text"}
               inputName={"academyName"}
@@ -103,6 +104,64 @@ const EditInstitute = () => {
                 BtnName={"Update"}
                 value="Update Institute"
               />
+=======
+            <input
+              type="text"
+              name="academyName"
+              id="academyName"
+              placeholder="Enter Your Institute Name"
+              value={valuee.academyName}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <input
+              type="text"
+              name="contactNumber"
+              id="contactNumber"
+              placeholder="Enter Your Institute Contact Number"
+              value={valuee.contactNumber}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <input
+              type="text"
+              name="imageUrl"
+              id="imageUrl"
+              placeholder="Enter Your Institute Image Url"
+              value={valuee.imageUrl}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <input
+              type="text"
+              name="academyEmail"
+              id="academyEmail"
+              placeholder="Enter Your Institute Email-Id"
+              value={valuee.academyEmail}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <input
+              type="text"
+              name="academyLocation"
+              id="academyLocation"
+              placeholder="Enter Your Institute Location"
+              value={valuee.academyLocation}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <input
+              type="text"
+              name="academyDescription"
+              id="academyDescription"
+              placeholder="Enter Your Institute Description"
+              value={valuee.academyDescription}
+              onChange={assignValues}
+            ></input>
+            <br />
+            <div className="form-btn">
+            <button className='button' onClick={()=>{alert()}}><span>{'Update'} </span></button>
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
             </div>
           </form>
         </div>

@@ -12,9 +12,15 @@ const Institute = () => {
   return (
     <>
       <div className="search-field">
+<<<<<<< HEAD
         <Input
           className="s-field"
           inputPlaceholder={"Search Your Institutes"}
+=======
+        <input
+          className="s-field"
+          placeholder="Search Your Institutes"
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
         />
         <Button className="button" BtnName={"Search"} value="Search" />
         <Link to="/addInstitute">

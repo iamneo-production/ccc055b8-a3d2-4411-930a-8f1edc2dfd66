@@ -71,4 +71,31 @@ a:hover{
 .button{
     margin-left: 10px;
     height:43px;
+<<<<<<< HEAD
+=======
+}
+.Navbar2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+.instnav{
+    background-color: #25274d;
+    padding:5px;
+    margin: 5px;
+    border-radius: 5px;
+    color:white;
+    font-size:large;
+    border:3px solid #3cf;
+}
+.instnav:hover{
+    background-color: #2e2f52;
+    font-size: larger;
+    transition: .25s;
+    color:#3cf;
+    padding:7px;
+    
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
 }

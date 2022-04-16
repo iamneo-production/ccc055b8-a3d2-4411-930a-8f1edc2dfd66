@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from '../../web components/buttons/Button.jsx'
 import './signup.css';
+<<<<<<< HEAD
 
 const Signup = () => {
+=======
+import AuthService from '../services/AuthService';
+
+const Signup = () => {
+    const history=useNavigate();
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     const[validation,setValidation]=useState("")
     // const[userstate,setusersate]=usestate("");
     const[valuee,setValue]=useState({
@@ -48,6 +55,12 @@ const Signup = () => {
         } 
     users.push(state);
     console.log(state);
+<<<<<<< HEAD
+=======
+    AuthService.addadmin(state).then(res=>{
+        history('/login');
+    })
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
@@ -58,7 +71,11 @@ const Signup = () => {
         navigate('/admin/signup',{ replace:true });
     }
     else if(valuee.select==='User'){
+<<<<<<< HEAD
         navigate('/',{ replace:true });
+=======
+        navigate('/user/signup',{ replace:true });
+>>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
     }
   }
     
