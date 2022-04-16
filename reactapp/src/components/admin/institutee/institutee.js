@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React , {useState} from 'react';
-import { Link , useHistory} from 'react-router-dom';
-=======
 import React , {useState,useEffect} from 'react';
 import { Link , useNavigate} from 'react-router-dom';
->>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
 import { FaEdit , FaTrash } from 'react-icons/fa';
 import '../institutee/institutee.css';
 import Rating from '@mui/material/Rating';
@@ -12,25 +7,6 @@ import Button from "../../web components/buttons/Button";
 import data from './data';
 import EditInstitute from '../ViewAcademy/institutes/EditInstitute';
 import Navbar from '../../navbar/Navbar'
-<<<<<<< HEAD
-const InstitutePage=()=>{
-    const[filter,setfilter]=useState("");
-    const searchfilter=(event)=>{
-        setfilter(event.target.value);
-    }
-    //const displaysearch=filter.length>0;
-    const dataSearch=data.instituteData.filter((val)=>{
-        return(val.name.includes(filter))
-    })
-    // console.log(dataSearch);
-    return(
-        <div>
-        <div className='Navbar'>
-            hell
-        </div>
-        <div className='instpage'>
-        <div className='search'>
-=======
 import InstituteService from '../services/InstituteService';
 const InstitutePage=()=>{
     const[institutes,setinstitutes]=useState([]);
@@ -77,7 +53,6 @@ const InstitutePage=()=>{
         <div className='instpage'>
         <div className='search'>
                 {/* <input className='searchtext' type="text" placeholder='Search Here' value={filter} onChange={searchfilter}></input> */}
->>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
                 <input className='searchtext' type="text" placeholder='Search Here' value={filter} onChange={searchfilter}></input>
                 <Button className='button' BtnName='Search' value='Search' />
             </div>
@@ -86,23 +61,14 @@ const InstitutePage=()=>{
                 return(
                     <div>
                     <div className='card' key={item}>
-<<<<<<< HEAD
                     <img className='img instimg' src={item.img} alt="Institute"/>
                     <center><a href='#0'>{item.name}</a></center>
-                    <div className='rating'>
-                        <p>Place:{item.place}</p>
-                        <Link to='/editInstitute' className='link'><FaEdit/></Link>
-                        <Link to='#' className='link'><FaTrash/></Link>
-=======
-                    <img className='img instimg' src={item.imageUrl} alt="Institute"/>
-                    <center><a href='#0'>{item.academyName}</a></center>
                     <div className='rating'>
                         <p>Place:{item.academyLocation}</p>
                         {/* <Link to='admin/editinstitute' className='link'><FaEdit/></Link> */}
                         <FaEdit onClick={editinstitute} style={{cursor:'pointer'}}/>
                         <FaTrash onClick={()=>deleteinstitute(item.instituteId)} style={{cursor:'pointer'}}/>
                         {/* <Link to='#' className='link'><FaTrash/></Link> */}
->>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
                         <Rating name="size-small" defaultValue={item.rating} size="small" />
                     </div>
                     
@@ -113,16 +79,11 @@ const InstitutePage=()=>{
             
         </section>
         <div className='button2'>
-<<<<<<< HEAD
-            <Link to="/addInstitute">
-            <Button className="link" BtnName={"Add"} id="f-addinst" />
-            </Link>
-=======
             {/* <Link to="/addinstitute">
             <Button className="link" BtnName={"Add"} id="f-addinst" />
             </Link> */}
             <button className='button' onClick={addinstitute}><span>{'Add'} </span></button>
->>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
+
         </div>
         </div>
         </div>
