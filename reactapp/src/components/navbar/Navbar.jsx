@@ -27,11 +27,9 @@ const Navbar = () => {
           <NavLink to='/user/signup' activeStyle>
             Sign Up
           </NavLink>
-<<<<<<< HEAD
-          <NavLink to='/login' activeStyle>
-=======
+
           <NavLink to='/user/login' activeStyle>
->>>>>>> 2383a9fb937c39b2ecd5b1dcd817a4e408cc1d18
+
             Log In
           </NavLink>
           {/* Second Nav */}
