@@ -38,7 +38,7 @@ const Login = () => {
             history('/institutepage');
         }
     })
-
+//check for status, if error, we give an alert pop up, else we continue to admin/institute page
     localStorage.setItem('usersdata',JSON.stringify(users));
     event.preventDefault();
   }
