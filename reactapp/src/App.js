@@ -26,6 +26,9 @@ import Student from './components/admin/Students/Student';
 
 import { Switch } from '@mui/material';
 
+//importing of all necessary files and functions accross the project
+//
+
 function App() {
   const success = () => toast.success('Login Successful!!')
   const fail = (err) => toast.error(err)
@@ -55,6 +58,7 @@ function App() {
             <Route path="/editcourse/:courseId" element={<EditCourse/>}/>
             <Route path="/student" element={<Student/>}/>
            </Routes>
+// routes define all the possible options a user/admin has to conduct further operations once successfully logged into the portal
          </div>
        </div>
      </Router>
