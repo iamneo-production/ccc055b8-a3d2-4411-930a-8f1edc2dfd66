@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import StudentService from "../../admin/services/StudentService";
 // import { FaAngellist, FaGenderless, FaHandScissors } from 'react-icons/fa'
 // import {Link} from 'react-router-dom'
@@ -8,6 +8,11 @@ import Input from "../../web components/input/Input.jsx";
 import "./course.css";
 
 const EnrollCourse = () => {
+  const id=useParams();
+  const courseid=id.id;
+  const coursename=localStorage.getItem('coursename');
+  // console.log(instid);
+  // console.log(id.id);
   const history=useNavigate();
   const [valuee, setValue] = useState({
     firstName: "",
@@ -26,6 +31,8 @@ const EnrollCourse = () => {
     pincode: "",
     state: "",
     nationality: "",
+    courseid:"",
+    coursename:"",
   });
   const assignValues = (e) => {
     const name = e.target.name;
@@ -54,13 +61,15 @@ const EnrollCourse = () => {
       pincode: valuee.pincode,
       state: valuee.state,
       nationality: valuee.nationality,
+      courseid:courseid,
+      coursename:coursename,
     };
     courses.push(state);
     console.log(state);
     StudentService.addStudent(state).then(res=>{
       history('/user/enrolledcourse');
     })
-    localStorage.setItem("coursedata", JSON.stringify(courses));
+    // localStorage.setItem("coursedata", JSON.stringify(courses));
     e.preventDefault();
   };
   return (
@@ -150,8 +159,26 @@ const EnrollCourse = () => {
                   onChange={assignValues}
                 ></input>
                 <br />
+                <input
+                  type="text"
+                  name="courseid"
+                  id="courseid"
+                  placeholder="Enter courseid"
+                  value={id.id}
+                  onChange={assignValues}
+                ></input>
+                <br />
               </div>
               <div className="form2">
+              <input
+                  type="text"
+                  name="coursename"
+                  id="coursename"
+                  placeholder="Enter coursename"
+                  value={coursename}
+                  onChange={assignValues}
+                ></input>
+                <br />
                 <input
                   type="text"
                   name="age"
@@ -230,9 +257,10 @@ const EnrollCourse = () => {
                   onChange={assignValues}
                 ></input>
                 <br />
+                
               </div>
               <div className="form-btn1">
-              <button className='button' onClick={()=>{alert()}}><span>{'Enroll'} </span></button>
+              <button className='button' onClick={()=>{alert('Enrolled Successfully')}}><span>{'Enroll'} </span></button>
               </div>
             </form>
           </div>
@@ -243,3 +271,4 @@ const EnrollCourse = () => {
 };
 
 export default EnrollCourse;
+
